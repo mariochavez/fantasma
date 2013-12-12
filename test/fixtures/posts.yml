@@ -1,0 +1,11 @@
+one:
+  title: My very first post
+  body: '#Hello'
+  slug: 'my-very-first-post'
+  tags: ['first']
+
+second:
+  title: My second post
+  body: '#Hello'
+  slug: 'my-second-post'
+  tags: ['second']

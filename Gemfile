@@ -6,8 +6,10 @@ gem 'coffee-rails'
 gem 'delayed_job_active_record', '>= 4.0.0'
 gem 'email_validator'
 gem 'exception_notification'
+gem 'font-awesome-rails'
 gem 'high_voltage'
 gem 'jquery-rails'
+gem 'migrant'
 gem 'pg'
 gem 'pg_search'
 gem 'pretty_formatter'
@@ -30,6 +32,7 @@ end
 
 group :development, :test do
   gem 'minitest-rails'
+  gem 'spring'
 end
 
 group :test do

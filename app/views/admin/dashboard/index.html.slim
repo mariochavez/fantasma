@@ -1,0 +1,23 @@
+section#list
+  header
+    span All posts
+    = link_to '+', admin_new_post_path, class: 'button-add'
+  section#posts-list
+    ol
+      - @posts.each do |post|
+        li{ class= "#{select_first_css}" }
+          = link_to '#', data: {:"post-id" => "#{post.id}"} do
+            h3= post.title
+
+section#preview
+  header
+    section#post-preview
+      #wrapper
+        h1= first_post_title @posts
+        = first_post_body @posts
+
+- content_for :javascript do
+  javascript:
+    $(function() {
+      dashboard = new Dashboard
+    })
