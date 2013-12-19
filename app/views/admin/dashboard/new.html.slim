@@ -1,5 +1,38 @@
-section#editor
-  heeader#post-title
-  section#post-editor
-  section#post-preview
+section#editor.l-editor
+  section#container.l-container
+    header#post-title
+    section#post-editor.l-post-editor
+      header.floating-header
+        = 'Markdown'
+        = link_to '#markdown-help-modal', class: 'markdown-help' do
+          = fa_icon 'question-circle'
+      textarea#editor-entry
+    section#post-preview.l-post-preview
+      header.floating-header
+        = 'Preview'
+        span.word-count 0 words
+      #post-preview-content
+        #rendered-markdown
 footer
+
+section.modal#markdown-help-modal tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true"
+  .modal-inner
+    header.modal-label
+      h2 Markdown Help
+    .modal-content
+      = render 'markdown_help'
+
+  = link_to '#!', class: 'modal-close', title: 'Close this modal', "data-close" => 'Close', "data-dismiss" => 'modal' do
+    = fa_icon 'times'
+
+
+- content_for :stylesheets do
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:300,700' unless Rails.env.test?
+  = stylesheet_link_tag :editor, media: 'all'
+
+- content_for :javascript do
+  = javascript_include_tag 'editor'
+  javascript:
+    $(function(){
+      editor = new Editor
+    });

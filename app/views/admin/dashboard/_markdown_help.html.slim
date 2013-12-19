@@ -1,0 +1,94 @@
+section.markdown-help-container
+  table.modal-markdown-help-table
+    thead
+      tr
+        th Result
+        th Markdown
+        th Shortcut
+    tbody
+      tr
+        td
+          strong Bold
+        td= '**text**'
+        td Ctrl / Cmd + B
+      tr
+        td
+          em Emphasize
+        td= '*text*'
+        td Ctrl / Cmd + I
+      tr
+        td
+          code Inline Code
+        td `code`
+        td Cmd + K / Ctrl + Shift + K
+      tr
+        td Strike-through
+        td ~~text~~
+        td Ctrl + Alt + U
+      tr
+        td Link
+        td [title](http://)
+        td Ctrl + Shift + L
+      tr
+        td Image
+        td ![alt](http://)
+        td Ctrl + Shift + I
+      tr
+        td List
+        td * item
+        td Ctrl + L
+      tr
+        td Blockquote
+        td > quote
+        td Ctrl + Q
+      tr
+        td H1
+        td # Heading
+        td Ctrl + Alt + 1
+      tr
+        td H2
+        td ## Heading
+        td Ctrl + Alt + 2
+      tr
+        td H3
+        td ### Heading
+        td Ctrl + Alt + 3
+      tr
+        td H4
+        td #### Heading
+        td Ctrl + Alt + 4
+      tr
+        td H5
+        td ##### Heading
+        td Ctrl + Alt + 5
+      tr
+        td H6
+        td ###### Heading
+        td Ctrl + Alt + 6
+      tr
+        td Select Word
+        td
+        td Ctrl + Alt + W
+      tr
+        td New Paragraph
+        td
+        td Ctrl / Cmd + Enter
+      tr
+        td Uppercase
+        td
+        td Ctrl + U
+      tr
+        td Lowercase
+        td
+        td Ctrl + Shift + U
+      tr
+        td Titlecase
+        td
+        td Ctrl + Alt + Shift + U
+      tr
+        td Insert Current Date
+        td
+        td Ctrl + Shift + 1
+  span
+    = 'For further Markdown syntax reference:'
+    = link_to 'http://daringfireball.net/projects/markdown/syntax', 'Markdown Documentation', target: '_blank'

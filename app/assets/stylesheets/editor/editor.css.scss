@@ -1,0 +1,35 @@
+.CodeMirror {
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: Inconsolata, monospace;
+  font-size: 1.5em;
+  line-height: 1.6em;
+  color: $dark-gray;
+
+  .cm-header {
+    color: #000;
+    font-size: 1.4em;
+    line-height: 1.4em;
+    font-weight: bold;
+  }
+
+  .cm-variable-2 {
+    color: $dark-gray;
+    white-space: pre-wrap;
+  }
+
+  pre {
+    padding: 0 40px;
+  }
+}
+
+#post-preview-content {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.6em;
+  color: $dark-gray;
+}
