@@ -103,7 +103,7 @@
                     md = converter.makeHtml(this.elem.getValue());
                 }
 
-                $(".modal-copyToHTML-content").text(md).selectText();
+                $('#copy-html-modal .code').text(md).selectText();
                 pass = false;
                 break;
             case 'list':

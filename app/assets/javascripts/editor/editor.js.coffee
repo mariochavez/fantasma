@@ -103,9 +103,15 @@ class Editor
     ($ '.CodeMirror-scroll').on 'scroll', @syncScroll
 
   enableMarkdownShortcuts: ->
+    shortcut.add 'Ctrl+Alt+C', =>
+      @showHtml()
+
     _.each @markdownShortcuts, (combination) =>
       shortcut.add combination.key, =>
         @editor.addMarkdown style: combination.style
+
+  showHtml: ->
+    window.location.hash = '#copy-html-modal'
 
   enableEditor: ->
     @editor.setOption 'readOnly', false

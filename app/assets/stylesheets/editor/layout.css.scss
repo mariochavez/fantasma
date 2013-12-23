@@ -50,7 +50,7 @@
   }
 }
 
-#markdown-help-modal {
+#markdown-help-modal, #copy-html-modal {
   @extend %modal;
 
   .modal-close:after {
@@ -102,5 +102,11 @@
     text-align: left;
     vertical-align: top;
     border-top: 1px solid #edece4;
+  }
+}
+
+#copy-html-modal {
+  .modal-content {
+    height: 200px;
   }
 }

@@ -25,6 +25,16 @@ section.modal#markdown-help-modal tabindex="-1" role="dialog" aria-labelledby="m
   = link_to '#!', class: 'modal-close', title: 'Close this modal', "data-close" => 'Close', "data-dismiss" => 'modal' do
     = fa_icon 'times'
 
+section.modal#copy-html-modal tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true"
+  .modal-inner
+    header.modal-label
+      h2 Copied HTML
+      p Press Ctrl / Cmd + C to copy the following HTML.
+    .modal-content
+      .code
+
+  = link_to '#!', class: 'modal-close', title: 'Close this modal', "data-close" => 'Close', "data-dismiss" => 'modal' do
+    = fa_icon 'times'
 
 - content_for :stylesheets do
   = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:300,700' unless Rails.env.test?

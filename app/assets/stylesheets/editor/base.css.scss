@@ -32,6 +32,12 @@
     }
   }
 
+  blockquote {
+    font-style: italic;
+    border-left: 3px solid $light-gray;
+    padding-left: 0.5em;
+  }
+
   .CodeMirror-lines {
     padding: 65px 0 40px 0;
   }
