@@ -2,6 +2,7 @@
 //= require underscore.inflection
 //
 //= require jquery-utils
+//= require js-utils
 //= require modal
 //= require shortcut
 //= require codemirror/codemirror
