@@ -1,11 +1,15 @@
 class Post < ActiveRecord::Base
+  extend FriendlyId
+
+  friendly_id :title
+
   structure do
     title         :string, validates: :presence
-    body          :text, validates: :presence
-    slug          :string
+    body          :text
+    slug          :string, index: true
     published     :datetime
     status        :integer, default: 0
-    tags          :serialized, example: ['tag1', 'tag2']
+    tags          :string, example: ['tag1', 'tag2'], index: true
     timestamps
   end
 end
