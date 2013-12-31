@@ -7,11 +7,11 @@ feature 'Admin Home' do
     page.must_have_selector 'span', text: 'All posts'
   end
 
-  scenario 'See 2 posts in posts list' do
+  scenario 'See 3 posts in posts list' do
     visit '/admin'
 
     within('#posts-list > ol') do
-      page.all('li').count.must_equal 2
+      page.all('li').count.must_equal 3
     end
   end
 
@@ -58,5 +58,55 @@ feature 'Admin Home' do
       page.must_have_selector '#post-editor'
       page.must_have_selector '#post-preview'
     end
+  end
+
+  scenario 'Fail to save post without title' do
+    visit '/admin/new'
+
+    within('#new_post') do
+      click_button 'Create Post'
+    end
+
+    page.must_have_selector '#flash-alert'
+  end
+
+  scenario 'Set title, body and save post' do
+    visit '/admin/new'
+
+    within('#new_post') do
+      fill_in 'post_title', with: 'Sample post'
+
+      click_button 'Create Post'
+    end
+
+    page.must_have_selector '#flash-notice'
+  end
+
+  scenario 'Update editor form on post save' do
+    visit '/admin/new'
+
+    within('#new_post') do
+      fill_in 'post_title', with: 'Sample post'
+      page.execute_script "window.editor.setValue('# Sample')"
+
+      click_button 'Create Post'
+    end
+
+    page.must_have_selector '#flash-notice'
+    current_path.must_match /\/admin\/\S+\/edit/
+  end
+
+  scenario 'Update existing post' do
+    post = Post.find 100
+
+    visit "/admin/#{post.id}/edit"
+
+    within("#edit_post_#{post.id}") do
+      fill_in 'post_title', with: 'Existing post update'
+
+      click_button 'Update Post'
+    end
+
+    page.must_have_selector '#flash-notice'
   end
 end

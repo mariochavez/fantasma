@@ -1,0 +1,45 @@
+= simple_form_for [:admin, post], remote: true do |form|
+  = form.hidden_field :title_slug
+  = form.hidden_field :published
+  = form.hidden_field :status
+  section#editor.l-editor
+    section#container.l-container
+      header
+        section#post-title
+          = form.input_field :title, placeholder: 'Your post title', tabindex: '1', maxlength: 100
+      section#post-editor.l-post-editor
+        header.floating-header
+          = 'Markdown'
+          = link_to '#markdown-help-modal', class: 'markdown-help', tabindex: '-1' do
+            = fa_icon 'question-circle'
+        = form.input_field :body, class: 'editor-entry', as: :text
+      section#post-preview.l-post-preview
+        header.floating-header
+          = 'Preview'
+          span.word-count 0 words
+        #post-preview-content
+          #rendered-markdown
+  footer.l-footer
+    nav
+      #post-tags
+      #post-actions
+        = form.button :submit, class: 'pure-button pure-button-primary'
+
+
+= render 'markdown_modal'
+
+= render 'copy_html_modal'
+
+- content_for :stylesheets do
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:300,700' unless Rails.env.test?
+  = stylesheet_link_tag :editor, media: 'all'
+
+- content_for :javascript do
+  = javascript_include_tag 'editor'
+
+  javascript:
+    $(function(){
+      editor = new Editor('#post_body')
+
+      postForm = new PostForm(editor, '.simple-form', '#post_body')
+    });

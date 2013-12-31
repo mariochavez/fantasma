@@ -102,6 +102,12 @@ class Editor
 
     ($ '.CodeMirror-scroll').on 'scroll', @syncScroll
 
+  getValue: ->
+    @editor.getValue()
+
+  setValue: (content) ->
+    @editor.setValue content
+
   enableMarkdownShortcuts: ->
     shortcut.add 'Ctrl+Alt+C', =>
       @showHtml()

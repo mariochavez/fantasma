@@ -1,0 +1,9 @@
+section.modal#markdown-help-modal tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true"
+  .modal-inner
+    header.modal-label
+      h2 Markdown Help
+    .modal-content
+      = render 'markdown_help'
+
+  = link_to '#!', class: 'modal-close', title: 'Close this modal', "data-close" => 'Close', "data-dismiss" => 'modal' do
+    = fa_icon 'times'

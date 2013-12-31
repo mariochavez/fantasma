@@ -1,0 +1,58 @@
+$alert-color: #e25440;
+$notice-color: #9fbb58;
+
+#flash {
+  margin: 10px 15px;
+  color: rgba(255, 255, 255, 0.9);
+
+  .flash-icon {
+    box-sizing: border-box;
+    height: 100%;
+    width: 44px;
+    text-align: center;
+    padding: 12px 15px;
+  }
+
+  .flash {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 39px;
+    font-size: 0.9em;
+    padding: 0;
+  }
+
+  .fa-times-circle {
+    float: right;
+    @extend .flash-icon;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.6);
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  #flash-notice {
+    background: $notice-color;
+    @extend .flash;
+
+    .fa-check-circle {
+      @extend .flash-icon;
+      margin-right: 20px;
+      background: darken($notice-color, 10%)
+    }
+  }
+
+  #flash-alert {
+    background: $alert-color;
+    @extend .flash;
+
+    .fa-exclamation-triangle {
+      @extend .flash-icon;
+      margin-right: 20px;
+      background: darken($alert-color, 10%)
+    }
+  }
+}

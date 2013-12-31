@@ -1,11 +1,20 @@
 one:
+  id: 102
   title: My very first post
   body: '#Hello'
   slug: 'my-very-first-post'
   tags: ['first']
 
 second:
+  id: 101
   title: My second post
   body: '#Hello'
   slug: 'my-second-post'
   tags: ['second']
+
+third:
+  id: 100
+  title: My post to update
+  body: '#Hello'
+  slug: 'my-post-to-update'
+  tags: ['third']

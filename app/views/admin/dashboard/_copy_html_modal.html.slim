@@ -1,0 +1,10 @@
+section.modal#copy-html-modal tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true"
+  .modal-inner
+    header.modal-label
+      h2 Copied HTML
+      p Press Ctrl / Cmd + C to copy the following HTML.
+    .modal-content
+      .code
+
+  = link_to '#!', class: 'modal-close', title: 'Close this modal', "data-close" => 'Close', "data-dismiss" => 'modal' do
+    = fa_icon 'times'
